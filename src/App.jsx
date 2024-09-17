@@ -7,6 +7,7 @@ import Dashboard from "./pages/Dashboard";
 import NotFound from "./ui/NotFound";
 import AuthForm from "./pages/AuthForm";
 import { Toaster } from "react-hot-toast";
+import Homepage from "./ui/Homepage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -21,7 +22,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<AppLayout />}>
-            <Route index element={<Navigate to="/dashboard" />} />
+            <Route index element={<Navigate to="home" />} />
+            <Route path="home" element={<Homepage />} />
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="auth" element={<AuthForm />} />
             <Route path="*" element={<NotFound />} />
